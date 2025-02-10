@@ -1,0 +1,452 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #f5f5dc;
+}
+body
+{
+    background-color: black;
+    scroll-behavior: smooth;
+}
+header{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: #151516;
+    border: solid;
+    justify-content: space-around;
+    flex-direction: row;
+    color: #f5f5dc;
+    border-left: 0px;
+    border-right: 0px;
+    
+}
+header h1,h2{
+    color:#f5f5dc;
+}
+.smartpng
+{
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+}
+.cloudpng
+{
+    height: 35px;
+    width: 35px;
+}
+.smart-icon
+{
+    display: flex;
+    margin-left: 10px;
+    padding: 10px 0px;
+    gap: 5px;
+}
+.temperature-box
+{
+    border: solid #f5f5dc 2px;
+    border-radius: 35px;
+    width: 295px;
+    height: 32px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+#Date
+{
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 900;
+}
+#Day
+{
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 900;
+}
+#time
+{
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 900;
+    display: flex;
+    color: #2f4f4f;
+}
+image
+{
+    display: flex;
+    transition: 0.5s;
+}
+.img-home
+{
+    display: flex;
+    transition: 0.3s;
+    margin-top: 25px;
+    width: 1250px;
+    height: 630px;
+    border: solid #f5f5dc 3px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-left: 15px;
+    position: absolute;
+
+}
+.img-light
+{
+    width: 1250px;
+    height: 630px;
+    border: solid #f5f5dc 3px;
+    border-radius: 10px;
+    margin-left: 15px;
+    transition: 0.3s;
+    margin-top: 25px;
+    z-index: 2;
+    position: absolute;
+}
+.control
+{
+    border: solid white 2px;
+    border-radius: 35px;
+    width: 100px;
+    height: 25px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 3px;
+    transition: 0.5s;
+    color: white;
+}
+.control:hover
+{
+    box-shadow: 0px 0px 7px whitesmoke;
+}
+.img-ac
+{
+    width: 580px;
+    height: 270px;
+    margin-left: 50px;
+    transition: 0.3s;
+    margin-top: 15px;
+    z-index: 2;
+    position: absolute;
+    left: 23%;
+    display: block;
+}
+.control-section
+{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 70%;
+    right: 0px;
+    justify-content: center;
+    position:absolute;
+    top: 40px;
+    align-items: center;
+}
+.control-1
+{
+    background-color:  #333;
+    width: 110px;
+    height: 97px;
+    padding: 6px;
+    border: solid #f5f5dc 1px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgba(128, 128, 128, 0.863);
+    color: #f5f5dc;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 22px;
+    position: relative;
+}
+.sun
+{
+    width: 30px;
+    height: 30px;
+    top: 4.5px;
+    left: 5.1px;
+    fill: #fff;
+    transition: 0.3s;
+    position: absolute;
+    z-index: 2;
+}
+.moon
+{
+    width: 30px;
+    height: 30px;
+    top: 6px;
+    left: 65px;
+    color: white;
+    fill:#ffffff;
+    transition: 0.3s;
+    position: absolute;
+    z-index: 2;
+}
+.label1
+{
+    width: 100px;
+    height: 40px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.138),inset 0px -5px 15px rgba(225, 225, 225, 0);
+    cursor: pointer;
+    transition: 0.3s;
+    left: 0px;
+    top: 5px;
+    border: solid;
+    border-color: #f5f5dc;
+    overflow: hidden;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.212),inset 0px -5px 15px rgba(225, 225, 225, 0.434);
+}
+.label1::after
+{
+    content: "";
+    border-radius: 180px;
+    width: 31px;
+    height: 31px;
+    background:  linear-gradient(180deg,#ffcc89,#d8860b);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: 0.3s; 
+}
+input:checked+.label1::after
+{
+    transform: translateX(192%);
+    background: linear-gradient(180deg,#ffffff,#ffffff);
+}
+input
+{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+input:checked + .label1
+{
+    background-color: #242424;
+}
+input:checked + .label1 svg.sun{
+    fill: #ffeded;
+}
+input:checked +.label1 svg.moon
+{
+    fill: #fff;
+    border: #fff;
+    border: none;
+}
+.alert-msg
+{
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    transition: 0.5s;
+    border: solid 1px  #f5f5dc;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    background-color: #151516;
+    flex-direction: row;
+    top: -15%;
+}
+.msg
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.alert-msg button
+{
+    padding: 5px 15px;
+    background-color: blue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    margin-left: 80px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.alert-msg h2
+{
+    color: #f5f5dc;
+    transition: 0.3s;
+    font-weight: 100;
+    margin-top: 10px;
+    text-align: center;
+}
+.alert-msg:hover
+{
+    box-shadow: 0px 0px 5px #fffefec6;
+    opacity: 0.8;
+}
+.ac-off
+{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    z-index: 1;
+    left: 65px;
+    transition: 0.3s;   
+    display: none;
+}
+.ac-off2
+{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    z-index: 1;
+    left: 120px;
+    transition: 0.3s; 
+    bottom: 255px;
+}
+.control-2
+{
+    background-color:  #333;
+    width: 110px;
+    height: 97px;
+    padding: 6px;
+    border: solid #f5f5dc 1px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgba(128, 128, 128, 0.863);
+    color: #f5f5dc;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 22px;
+}
+.label2{
+    width: 100px;
+    height: 40px;
+    position: relative;
+    display: block;
+    background: #333;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.138),inset 0px -5px 15px rgba(225, 225, 225, 0);
+    cursor: pointer;
+    transition: 0.3s;
+    right: 0px;
+    border: solid;
+    border-color: white;
+}
+.label2::after{
+    content: "";
+    border-radius: 180px;
+    width: 31px;
+    height: 31px;
+    background: linear-gradient(180deg,#d4d4d4,#ffffff);
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;   
+}
+input:checked + .label2::after
+{
+    transform: translateX(192%);
+    background: linear-gradient(180deg,#000000,#000000);
+}
+input:checked + .label2{
+    background: hsl(223, 90%, 61%);
+}
+.acname
+{
+    position: relative;
+    transition: 0.3s;
+    right: 20px;
+    overflow: hidden;
+}
+.img_ac_on
+{
+    width: 500px;
+    height: 270px;
+    margin-left: 50px;
+    transition: 0.3s;
+    margin-top: 15px;
+    z-index: 2;
+    position: absolute;
+    left: 25.5%;
+    display: none;
+}
+.lightongif
+{
+    width: 35px;
+    height: 35px;
+    position: relative;
+    z-index: 1;
+    left: 85px;
+    top: 14px;
+    transition: 0.4s;
+    margin-top: 0;
+    margin-left: 0;
+}
+.ligthoffgif
+{
+    width: 35px;
+    height: 35px;
+    position: relative;
+    z-index: 1;
+    left: 85px;
+    top: 14px;
+    display: inline;
+    transition: 0.4s;
+    margin-top: 0;
+    margin-left: 0;
+    display: none;
+}
+.control-3
+{
+    background-color:  #333;
+    width: 110px;
+    height: 97px;
+    padding: 6px;
+    border: solid #f5f5dc 1px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgba(128, 128, 128, 0.863);
+    color: #f5f5dc;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 22px;
+}
+.control-3 h1
+{
+    position: relative;
+    bottom: 30px;
+    left: -12px;
+}
+@media  screen and (min-width: 1600px)  {
+    .ac-off2
+    {
+        bottom: 300px;
+        left: 150px;
+    }
+    .control-section
+    {
+        top: -180px;
+    }
+    .img-ac
+    {
+        left: 18%;
+    }
+    .img_ac_on
+    {
+        left: 19.8%;
+    }
+    
+}
